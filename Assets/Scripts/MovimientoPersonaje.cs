@@ -16,13 +16,17 @@ public class MovimientoPersonaje : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.V))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
             animator.SetBool("AccionSalto", true);
         }
-        if (Input.GetKeyUp(KeyCode.F))
+        if (Input.GetKeyUp(KeyCode.V))
         {
             animator.SetBool("AccionSalto", false);
         }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
     }
 }
