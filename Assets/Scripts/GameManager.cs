@@ -10,6 +10,19 @@ public class GameManager : MonoBehaviour
     [SerializeField] TMP_Text texto;
     [SerializeField] public int puntuacionActual, puntuacionMaxima;
     [SerializeField] public float tiempo;
+
+    private void Awake()
+    {
+        if (Instancia == null)
+        {
+            Instancia = this;
+            DontDestroyOnLoad(this);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +50,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    void ActualizarPuntuacion()
+    public void ActualizarPuntuacion()
     {
         puntuacionActual += 1;
         if (puntuacionActual >= puntuacionMaxima)
