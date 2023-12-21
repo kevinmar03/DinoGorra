@@ -1119,6 +1119,9 @@ MonoBehaviour:
   animator: {fileID: 0}
   alturaSalto: 3
   rigidbody: {fileID: 0}
+  audioSource: {fileID: 1190783958}
+  sonidos:
+  - {fileID: 8300000, guid: b8a2cbdef04a2b74baa47cd1ed2e16fc, type: 3}
 --- !u!82 &1190783958
 AudioSource:
   m_ObjectHideFlags: 0

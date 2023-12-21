@@ -7,6 +7,8 @@ public class MovimientoPersonaje : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] int alturaSalto;
     [SerializeField] Rigidbody2D rigidbody;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip[] sonidos;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,9 @@ public class MovimientoPersonaje : MonoBehaviour
         {
             animator.SetBool("AccionSalto", true);
             rigidbody.AddForce(Vector2.up * alturaSalto);
+            audioSource.clip = sonidos[0];
+            audioSource.Play();
+
         }
         else
         {
