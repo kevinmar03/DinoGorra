@@ -12,12 +12,17 @@ public class MovimientoEnemigo : MonoBehaviour
     {
         camara = Camera.main;
         posicionMinima = camara.ViewportToWorldPoint(new Vector3(0, 0));
-        posicionInicial = camara.ViewportToWorldPoint(new Vector3(1, 1));
+        posicionInicial = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.Translate(Vector2.left * velocidad * Time.deltaTime);
+        if (transform.position.x < posicionMinima.x)
+        {
+            transform.position = posicionInicial;
+            velocidad += 1;
+        }
     }
 }

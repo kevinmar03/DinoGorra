@@ -35,7 +35,6 @@ public class GameManager : MonoBehaviour
         tiempo += Time.deltaTime;
         int minutos = (int)tiempo / 60;
         int segundos = (int)tiempo % 60;
-        Debug.Log(minutos + ":" + segundos);
         string textoTiempo = $"{minutos:D2}:{segundos:D2}";
         texto.text = textoTiempo;
     }
