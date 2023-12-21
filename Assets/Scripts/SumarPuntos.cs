@@ -15,12 +15,11 @@ public class SumarPuntos : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.transform.tag == "Gorra")
+        if (other.transform.tag == "Enemigo")
         {
             GameManager.Instancia.ActualizarPuntuacion();
-            gameObject.SetActive(false);
         }
     }
 }
